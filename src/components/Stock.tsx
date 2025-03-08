@@ -1,5 +1,5 @@
 import { memo, useMemo } from "react";
-import { AssetData } from "../pages/Asset";
+import { AssetData } from "../contexts/AssetsContext";
 
 export type StockProps = {
   stock: AssetData;
@@ -31,7 +31,8 @@ function Stock({ stock }: StockProps) {
             isPositive ? "text-green-500" : "text-red-500"
           }`}
         >
-          {isPositive ? "↑" : "↓"} {Math.abs(percentageChange).toFixed(2)}%
+          {isPositive ? "+" : "-"}
+          {Math.abs(percentageChange).toFixed(2)}%
         </span>
       </div>
     </a>

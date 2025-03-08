@@ -5,11 +5,10 @@ export type AssetData = {
   name: string;
   symbol: string;
   price: number;
-  percentageChange: number;
   history: number[];
 };
 
-type AssetsContextType = {
+export type AssetsContextType = {
   assets: AssetData[];
   getAsset: (symbol: string) => AssetData | undefined;
 };

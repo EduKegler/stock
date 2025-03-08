@@ -1,4 +1,4 @@
-import { memo } from "react";
+import { memo, useMemo } from "react";
 
 export type MyAsset = {
   name: string;
@@ -13,6 +13,10 @@ export type MyStockProps = {
 };
 
 function MyStock({ stock }: MyStockProps) {
+  const profit = useMemo(() => {
+    return stock.totalShares * (stock.price - stock.averagePrice);
+  }, [stock]);
+
   return (
     <a
       key={stock.name}
@@ -46,15 +50,10 @@ function MyStock({ stock }: MyStockProps) {
           <span className="text-sm text-foreground-muted">Profit:</span>
           <span
             className={`font-medium ${
-              stock.totalShares * (stock.price - stock.averagePrice) >= 0
-                ? "text-green-500"
-                : "text-red-500"
+              profit >= 0 ? "text-green-500" : "text-red-500"
             }`}
           >
-            $
-            {(stock.totalShares * (stock.price - stock.averagePrice)).toFixed(
-              2
-            )}
+            {profit >= 0 ? "+" : "-"}${Math.abs(profit).toFixed(2)}
           </span>
         </div>
       </div>

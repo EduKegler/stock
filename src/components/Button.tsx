@@ -27,6 +27,7 @@ function Button({
 
   return (
     <button
+      role="button"
       className={`${baseStyles} ${variantStyles[variant]} ${className}`}
       {...props}
     />
