@@ -17,6 +17,7 @@ function Stock({ stock }: StockProps) {
     <a
       className="bg-layer-0 rounded-lg p-4 shadow-sm"
       href={`/assets/${stock.symbol}`}
+      data-testid="asset-card"
     >
       <div className="flex items-center gap-3">
         <div>
@@ -25,7 +26,9 @@ function Stock({ stock }: StockProps) {
         </div>
       </div>
       <div className="mt-2 flex items-center justify-between">
-        <span className="text-lg font-bold">${stock.price.toFixed(2)}</span>
+        <span className="text-lg font-bold" data-testid="stock-price">
+          ${stock.price.toFixed(2)}
+        </span>
         <span
           className={`text-sm ${
             isPositive ? "text-green-500" : "text-red-500"

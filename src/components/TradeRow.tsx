@@ -9,7 +9,7 @@ function TradeRow({ trade }: TradesProps) {
   const total = trade.quantity * trade.strikePrice;
 
   return (
-    <tr className="border-b border-layer-2">
+    <tr data-testid="trade-list-item" className="border-b border-layer-2">
       <td className="py-2 px-4">
         {new Date(trade.timestamp).toLocaleString()}
       </td>

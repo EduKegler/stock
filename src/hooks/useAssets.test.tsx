@@ -9,10 +9,10 @@ describe("useAssets", () => {
       assets: [
         {
           id: "1",
-          name: "Bitcoin",
-          symbol: "BTC",
-          price: 30000,
-          history: [29000, 30000, 31000],
+          name: "Apple Inc.",
+          symbol: "AAPL",
+          price: 180,
+          history: [175, 178, 180],
         },
       ],
       getAsset: (symbol: string) =>

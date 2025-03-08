@@ -5,8 +5,8 @@ import { useContext } from "react";
 import { AssetsContext, AssetsContextType } from "./AssetsContext";
 
 const mockAssetData = [
-  { symbol: "BTC", price: "30000" },
-  { symbol: "ETH", price: "2000" },
+  { symbol: "AAPL", price: "180" },
+  { symbol: "GOOGL", price: "140" },
 ];
 
 const TestComponent = () => {
@@ -14,7 +14,7 @@ const TestComponent = () => {
   return (
     <div>
       <div data-testid="assets-length">{assets.length}</div>
-      <div data-testid="btc-asset">{getAsset("BTC")?.price}</div>
+      <div data-testid="aapl-asset">{getAsset("AAPL")?.price}</div>
     </div>
   );
 };
@@ -50,7 +50,7 @@ describe("AssetsProvider", () => {
 
     expect(globalThis.fetch).toHaveBeenCalledTimes(1);
     expect(screen.getByTestId("assets-length").textContent).toBe("2");
-    expect(screen.getByTestId("btc-asset").textContent).toBe("30000");
+    expect(screen.getByTestId("aapl-asset").textContent).toBe("180");
     unmount();
   });
 

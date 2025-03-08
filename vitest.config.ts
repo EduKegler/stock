@@ -8,6 +8,7 @@ export default defineConfig({
       provider: "istanbul",
       include: ["src/**/*.{ts,tsx}"],
     },
+    include: ["src/**/*.test.{ts,tsx}"],
     globals: true,
   },
 });

@@ -112,6 +112,7 @@ function Asset() {
                 <Button
                   variant="primary"
                   onClick={handleBuyClick}
+                  data-testid="buy-button"
                   disabled={quantity <= 0}
                 >
                   Buy
@@ -120,6 +121,7 @@ function Asset() {
                   variant="danger"
                   onClick={handleSellClick}
                   disabled={quantity > portfolio.totalShares}
+                  data-testid="sell-button"
                 >
                   Sell
                 </Button>

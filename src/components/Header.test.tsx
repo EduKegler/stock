@@ -27,13 +27,13 @@ describe("Header", () => {
     expect(screen.getByText("Assets")).toBeInTheDocument();
   });
 
-  it("renders asset symbol when on specific asset path", () => {
+  it("renders stock symbol when on specific asset path", () => {
     render(
-      <MemoryRouter initialEntries={["/assets/BTC"]}>
+      <MemoryRouter initialEntries={["/assets/AAPL"]}>
         <Header />
       </MemoryRouter>
     );
-    expect(screen.getByText("BTC")).toBeInTheDocument();
+    expect(screen.getByText("AAPL")).toBeInTheDocument();
   });
 
   it("renders header with correct styling", () => {
